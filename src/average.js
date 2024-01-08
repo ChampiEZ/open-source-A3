@@ -1,17 +1,13 @@
-function calculerMoyenne(tableau) {
-    if (tableau.length === 0) {
-        return "Le tableau est vide, impossible de calculer la moyenne.";
+/**
+* Calculates the avergae of a series of numbers.
+*
+* @param {number[]} data An array of numbers
+* @returns {number} The average of the numberes in the array.
+*/
+export default function average(data) {
+    if (!Array.isArray(data) || !data.every(Number.isFinite)) {
+        return NaN;
     }
-
-    var somme = tableau.reduce(function(acc, valeur) {
-        return acc + valeur;
-    }, 0);
-
-    var moyenne = somme / tableau.length;
-
-    return moyenne;
+    const sum = data.reduce((a, b) => a + b, 0);
+    return sum / data.length;
 }
-
-var tableauExemple = [10, 15, 20, 25, 30];
-var resultatMoyenne = calculerMoyenne(tableauExemple);
-console.log("La moyenne du tableau est :", resultatMoyenne);

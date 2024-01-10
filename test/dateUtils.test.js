@@ -1,4 +1,4 @@
-import { addDays, formatDate, diffInDays, diffInYears, getDayOfWeek} from '../src/dateUtils';
+import { addDays, formatDate, diffInDays, diffInYears, getDayOfWeek, nextMonth} from '../src/dateUtils';
 
 test('addDays adds the given number of days to the date', () => {
     const date = new Date(2024, 9, 1); // October 1, 2024
@@ -31,4 +31,10 @@ test('getDayOfWeek returns the day of the week for a given date', () => {
   const date = new Date(2024, 9, 1); // October 1, 2024 is a Sunday
   const result = getDayOfWeek(date);
   expect(result).toBe('Mardi');
+});
+
+test('nextMonth returns the first day of the next month for a given date', () => {
+  const date = new Date(2024, 9, 1); // October 1, 2024
+  const result = nextMonth(date);
+  expect(result.getMonth()).toBe(10); // November
 });

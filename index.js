@@ -1,4 +1,5 @@
-import { addDays, formatDate, diffInDays, diffInYears, getDayOfWeek } from './src/dateUtils.js';
+import { addDays, formatDate, diffInDays, diffInYears, getDayOfWeek, nextMonth } from './src/dateUtils.js';
+import { format } from 'date-fns';
 
 const currentDate = new Date();
 const futureDate = addDays(currentDate, 5);
@@ -17,5 +18,10 @@ console.log(`La personne a ${age} ans.`);
 const today = new Date();
 const dayOfWeek = getDayOfWeek(today);
 console.log(`Aujourd'hui, c'est ${dayOfWeek}.`);
+
+const today2 = new Date();
+const nextMonthDate = nextMonth(today2);
+console.log(`Le premier jour du mois prochain est ${format(nextMonthDate, 'dd.MM.yyyy')}.`);
+
 
 

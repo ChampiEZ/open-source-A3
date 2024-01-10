@@ -23,3 +23,9 @@ export function getDayOfWeek(date) {
   const days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
   return days[date.getDay()];
 }
+
+export function nextMonth(date) {
+  let result = new Date(date);
+  result.setMonth(date.getMonth() + 1);
+  return result;
+}

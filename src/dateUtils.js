@@ -14,3 +14,7 @@ export function diffInDays(date1, date2) {
   const diffTime = Math.abs(date2 - date1);
   return Math.round(diffTime / oneDay);
 }
+
+export function diffInYears(date1, date2) {
+  return date2.getFullYear() - date1.getFullYear();
+}

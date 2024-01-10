@@ -1,4 +1,4 @@
-import { addDays, formatDate, diffInDays, diffInYears } from './src/dateUtils.js';
+import { addDays, formatDate, diffInDays, diffInYears, getDayOfWeek } from './src/dateUtils.js';
 
 const currentDate = new Date();
 const futureDate = addDays(currentDate, 5);
@@ -13,5 +13,9 @@ const birthDate = new Date(1990, 0, 1); // January 1, 1990
 const currentDate2 = new Date();
 const age = diffInYears(birthDate, currentDate2);
 console.log(`La personne a ${age} ans.`);
+
+const today = new Date();
+const dayOfWeek = getDayOfWeek(today);
+console.log(`Aujourd'hui, c'est ${dayOfWeek}.`);
 
 

@@ -8,3 +8,9 @@ export function addDays(date, days) {
 export function formatDate(date, formatStr) {
   return format(date, formatStr);
 }
+
+export function diffInDays(date1, date2) {
+  const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+  const diffTime = Math.abs(date2 - date1);
+  return Math.round(diffTime / oneDay);
+}

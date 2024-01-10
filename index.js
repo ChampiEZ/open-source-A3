@@ -1,5 +1,7 @@
-import { addDays } from './src/dateUtils.js';
+import { addDays, formatDate } from './src/dateUtils.js';
 
-const date = new Date();
-const newDate = addDays(date, 5);
-console.log(newDate);
+const currentDate = new Date();
+const futureDate = addDays(currentDate, 5);
+console.log(formatDate(futureDate, 'dd.MM.yyyy'));
+
+

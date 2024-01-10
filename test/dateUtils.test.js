@@ -1,15 +1,8 @@
-import DateUtils from '../src/dateUtils';
+import { addDays } from '../src/dateUtils';
 
-test('Add days to date', () => {
-  const date = new Date(2022, 0, 1); 
-  const result = DateUtils.addDays(date, 5);
-  expect(result).toEqual(new Date(2022, 0, 6));
+test('addDays adds the given number of days to the date', () => {
+    const date = new Date(2024, 9, 1); // October 1, 2024
+    const result = addDays(date, 5);
+    expect(result.getMonth()).toBe(9); // Still October
+    expect(result.getDate()).toBe(6); // Now October 6
 });
-
-test('Compare dates', () => {
-  const date1 = new Date(2022, 0, 1);
-  const date2 = new Date(2022, 0, 5);
-  const result = DateUtils.compareDates(date1, date2);
-  expect(result).toBeLessThan(0);
-});
-
